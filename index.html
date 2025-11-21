@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Amigos de Pata — ONG de Proteção Animal</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#">Amigos de Pata</a>
+      <nav class="nav">
+        <a href="#home">Início</a>
+        <a href="#about">Sobre</a>
+        <a href="#adopt">Adotar</a>
+        <a href="#volunteer">Voluntário</a>
+        <a href="#donate">Doar</a>
+        <a href="#contact">Contato</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="wrap hero-content">
+        <h1>Amigos de Pata</h1>
+        <p>Resgatando, cuidando e encontrando novos lares para animais em situação de risco.</p>
+        <p><a href="#adopt" class="btn">Ver animais para adoção</a> <a href="#donate" class="btn ghost">Ajudar agora</a></p>
+      </div>
+      <div class="hero-image">
+        <img src="assets/images/hero.jpg" alt="Cães resgatados"/>
+      </div>
+    </section>
+
+    <section id="about" class="wrap about">
+      <h2>Sobre nós</h2>
+      <p>A <strong>Amigos de Pata</strong> é uma organização sem fins lucrativos dedicada ao resgate, reabilitação e adoção de animais. Trabalhamos com uma rede de voluntários, clínicas parceiras e adotantes responsáveis para oferecer uma segunda chance a cães e gatos.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Missão</h3>
+          <p>Resgatar animais, oferecer cuidados veterinários e encontrar lares responsáveis.</p>
+        </div>
+        <div class="card">
+          <h3>Visão</h3>
+          <p>Construir uma comunidade que respeita e protege animais.</p>
+        </div>
+        <div class="card">
+          <h3>Valores</h3>
+          <p>Transparência, empatia e responsabilidade.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="adopt" class="wrap adopt">
+      <h2>Animais disponíveis para adoção</h2>
+      <p>Conheça alguns dos nossos peludos que procuram um lar:</p>
+      <div class="grid">
+        <article class="pet">
+          <img src="assets/images/pet1.jpg" alt="Luna" />
+          <h3>Luna</h3>
+          <p>Fêmea, 2 anos, dócil e sociável. Vacinação em dia.</p>
+          <p><strong>Localização:</strong> Belo Horizonte</p>
+          <button class="btn small" onclick="openModal('Luna')">Quero adotar</button>
+        </article>
+
+        <article class="pet">
+          <img src="assets/images/pet2.jpg" alt="Toby" />
+          <h3>Toby</h3>
+          <p>Macho, 4 anos, tranquilo e carinhoso. Compatível com crianças.</p>
+          <p><strong>Localização:</strong> Belo Horizonte</p>
+          <button class="btn small" onclick="openModal('Toby')">Quero adotar</button>
+        </article>
+
+        <article class="pet">
+          <img src="assets/images/pet3.jpg" alt="Mia" />
+          <h3>Mia</h3>
+          <p>Gata, 1 ano, brincalhona e curiosa.</p>
+          <p><strong>Localização:</strong> Belo Horizonte</p>
+          <button class="btn small" onclick="openModal('Mia')">Quero adotar</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="volunteer" class="wrap">
+      <h2>Seja voluntário</h2>
+      <p>Tem tempo livre e vontade de ajudar? Precisamos de apoio em resgates, eventos e cuidados nos abrigos.</p>
+      <ul>
+        <li>Preencher formulário de voluntariado</li>
+        <li>Treinamento básico e integração</li>
+        <li>Equipe de plantão para resgates</li>
+      </ul>
+      <p><a href="#contact" class="btn">Entrar em contato</a></p>
+    </section>
+
+    <section id="donate" class="wrap donate">
+      <h2>Doações</h2>
+      <p>As doações mantêm nosso trabalho — ração, medicamentos, atendimento veterinário e infraestrutura.</p>
+      <div class="donation-cards">
+        <div class="donation">
+          <h3>Doação única</h3>
+          <p>Pix: <strong>00.000.000/0000-00</strong></p>
+          <p>Banco: Exemplo Bank — Agência: 0000 — Conta: 000000-0</p>
+        </div>
+        <div class="donation">
+          <h3>Ajude com ração</h3>
+          <p>Doe pacotes de ração em nossos pontos de coleta.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="wrap contact">
+      <h2>Contato</h2>
+      <p>Fale conosco para adoção, voluntariado ou doações.</p>
+      <form id="contactForm" onsubmit="submitForm(event)">
+        <label>Nome</label>
+        <input type="text" id="nome" required/>
+        <label>E-mail</label>
+        <input type="email" id="email" required/>
+        <label>Mensagem</label>
+        <textarea id="mensagem" rows="4" required></textarea>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2025 Amigos de Pata — ONG de Proteção Animal</p>
+      <p>Endereço: Rua Exemplo, 123 — Belo Horizonte — MG</p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" aria-label="Fechar" onclick="closeModal()">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
